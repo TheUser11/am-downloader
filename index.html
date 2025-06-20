@@ -101,7 +101,7 @@ def getdeckey():
             `))
         }
 
-        function download(song_url) {
+        function download(song_url=String) {
             songtemp_url = song_url.split('/')
             m = document.cookie.split('media-user-token=')
             getDecKey(m[1], songtemp_url[songtemp_url.length])

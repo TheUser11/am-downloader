@@ -101,7 +101,7 @@ def getdeckey():
             `))
         }
 
-        function download(song_url=String) {
+        function download(song_url) {
             songtemp_url = song_url.split('/')
             m = document.cookie.split('media-user-token=')
             getDecKey(m[1], songtemp_url[songtemp_url.length])
@@ -127,6 +127,6 @@ def getdeckey():
     <div class="url">
         <label>Enter the URL of the song you want:</label>
         <input id="url-text" type="text">
-        <button onclick="download()">Download</button>
+        <button onclick="download(document.getElementById('url-text'))">Download</button>
     </div>
 </body>

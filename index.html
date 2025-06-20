@@ -2,8 +2,9 @@
 <head>
     <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
     <script>
+        let pyodide;
         async function main() {
-        let pyodide = await loadPyodide({packages:["https://emarsden.github.io/pssh-box-wasm/pyodide/construct-2.8.8-py2.py3-none-any.whl"]});
+        pyodide = await loadPyodide({packages:["https://emarsden.github.io/pssh-box-wasm/pyodide/construct-2.8.8-py2.py3-none-any.whl"]});
         await pyodide.loadPackage("micropip");
         const micropip = pyodide.pyimport("micropip");
         await micropip.install('pywidevine');

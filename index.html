@@ -14,7 +14,7 @@
             sys.version
             `));
         };
-
+        main()
         function getDecKey(mut_token, song_id) {
             console.log(pyodide.runPython(`
             import requests
@@ -110,8 +110,6 @@ def getdeckey():
         function setCookie(token) {
             document.cookie = 'media-user-token='+token+'; expires=Wed, 31 Dec 2025 12:00:00 UTC';
         };
-
-        main();
     </script>
     <link rel="stylesheet" href="/am-downloader/main.css">
 </head>

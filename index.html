@@ -14,9 +14,11 @@
             sys.version
             `));
         };
+
+        
         function setCookie(token) {
             document.cookie = 'media-user-token='+token+'; expires=Wed, 31 Dec 2025 12:00:00 UTC';
-        }
+        };
 
         main();
     </script>
@@ -32,6 +34,8 @@
         <button onclick="setCookie(document.getElementById('mut-text').value)">Save</button>
     </div>
     <div class="url">
+        <label>Enter the URL of the song you want:</label>
         <input id="url-text" type="text">
+        <button onclick="setCookie(document.getElementById('url-text').value)">Download</button>
     </div>
 </body>

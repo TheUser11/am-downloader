@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.7/full/pyodide.js"></script>
+        <script>
+        async function main() {
+        let pyodide = await loadPyodide({packages:["https://emarsden.github.io/pssh-box-wasm/pyodide/construct-2.8.8-py2.py3-none-any.whl"]});
+        await pyodide.loadPackage("micropip");
+        const micropip = pyodide.pyimport("micropip");
+        await micropip.install('pywidevine');
+        await micropip.install('requests');
+        await micropip.install('m3u8');
+        console.log(pyodide.runPython(`
+            import sys
+            sys.version
+            `));
+        };
+        function setCookie(token) {
+            document.cookie = 'media-user-token='+token+'; expires=Wed, 31 Dec 2025 12:00:00 UTC';
+        }
+
+        main();
+    </script>
+    <link rel="stylesheet" href="download.css">
+</head>
+<body>
+    <div class="title">
+        <label>am-downloader</label>
+    </div>
+    <div class="mut">
+        <label>Enter Media User Token:</label>
+        <input id="mut-text" type="text">
+        <button onclick="setCookie(document.getElementById('mut-text').value)">Save</button>
+    </div>
+</body>

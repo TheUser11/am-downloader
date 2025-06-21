@@ -182,6 +182,7 @@
         function download(song_url) {
             songtemp_url = song_url.split('/')
             m = document.cookie.split('media-user-token=')
+            console.log(songtemp_url[songtemp_url.length])
             getDecKey(m[1], songtemp_url[songtemp_url.length])
         }
 

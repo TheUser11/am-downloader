@@ -109,7 +109,6 @@
             import subprocess
 
             # 381237323
-            test = input('hi')
             session = requests.Session()
 
             mut_token = `+' "'+mut_token+'"'+`
@@ -183,8 +182,7 @@
         function download(song_url) {
             songtemp_url = song_url.split('/')
             m = document.cookie.split('media-user-token=')
-            console.log(songtemp_url)
-            getDecKey(m[1], songtemp_url[songtemp_url.length])
+            getDecKey(m[1], songtemp_url[songtemp_url.length - 1])
         }
 
         function setCookie(token) {

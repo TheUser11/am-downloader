@@ -112,7 +112,7 @@
             test = input('hi')
             session = requests.Session()
 
-            mut_token = `+' '+mut_token+`
+            mut_token = `+' "'+mut_token+'"'+`
             def getauthtoken():
                 global token
                 home_page = session.get("https://music.apple.com").text
@@ -121,7 +121,7 @@
                 token = re.search('(?=eyJh)(.*?)(?=")', index_js_page).group(1)
                 return token
 
-            songid = `+' '+song_id+`
+            songid = `+' "'+song_id+'"'+`
             webplayback = session.post('https://play.music.apple.com/WebObjects/MZPlay.woa/wa/webPlayback', json={"subscriptionAdamId":songid}, headers={"Authorization": "Bearer "+str(getauthtoken()),"X-Apple-Music-User-Token":str(mut_token)}).json()
 
             m3u8assetval = 0
